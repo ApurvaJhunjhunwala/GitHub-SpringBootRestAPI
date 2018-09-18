@@ -1,0 +1,127 @@
+<!-- /.row -->
+
+
+<!-- <div class="row" > -->
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="table-responsive">
+
+                    <form name="form" role="form" class="form" novalidate>
+                           <div class="row">      
+                                   <div class="form-group col-lg-3 col-md-4 col-sm-6 required" show-errors>
+                                        <label class="control-label" value="id"></label>
+                                        <input
+                                            type="text" 
+                                            name="id"
+                                            class="form-control" 
+                                            ng-model="cardForm.pk.id" 
+                                            ng-maxlength="38"
+                                            autocomplete="off"
+                                            ng-readonly="cardForm.id != undefined && formMode == 'edit'"
+                                            ng-required="true"
+                                            awnum num-int=38 num-fract=0 
+                                            />  
+                                        <p class="help-block">     
+                                            <span ng-if="form.id.$error.maxlength"  translate-values="{maxLength: 19}"></span>
+                                        </p>
+                                    </div>
+                                      
+                                    
+                            
+                                   
+                                  <div class="form-group col-lg-3 col-md-4 col-sm-6 " show-errors>
+                                        <label class="control-label" value="Name"></label>
+                                        <input
+                                            type="text" 
+                                            name="name"
+                                            class="form-control" 
+                                            ng-model="cardForm.name" 
+                                            ng-maxlength="4"
+                                            autocomplete="off"
+                                            ng-required="false"
+                                            ng-readonly="false"
+                                             />
+                                             
+                                   </div>
+                                   
+                                    <div class="form-group col-lg-3 col-md-4 col-sm-6 " show-errors>
+                                        <label class="control-label" value="Limit"></label>
+                                        <input
+                                            type="text" 
+                                            name="name"
+                                            class="form-control" 
+                                            ng-model="cardForm.limit" 
+                                            ng-maxlength="4"
+                                            autocomplete="off"
+                                            ng-required="false"
+                                            ng-readonly="false"
+                                             />
+                                             
+                                   </div>
+                                   
+                                    <div class="form-group col-lg-3 col-md-4 col-sm-6 " show-errors>
+                                        <label class="control-label" value="Balance"></label>
+                                        <input
+                                            type="text" 
+                                            name="name"
+                                            class="form-control" 
+                                            ng-model="cardForm.balance" 
+                                            ng-maxlength="4"
+                                            autocomplete="off"
+                                            ng-required="false"
+                                            ng-readonly="false"
+                                             />
+                                             
+                                   </div>
+                                  
+              <div class="row">    
+                 <div class="panel panel-default" ng-show="cardForm.cardParameters.length > 0">
+                 <br>
+				 	<h4  translate="igas.lang.card.management.addcard.cardParameter.label"></h4>
+				    <table wt-responsive-table ng-table="table" show-filter="false" class="table table-striped table-bordered results-table responsive" ng-class="" >
+				        <thead>
+				            <tr>
+				                <th value="id"></th>
+				                <th value="Name"></th>
+				                <th value="Limit"></th>
+				                <th value="Balance"  ></th>
+				                <th  class="col-lg-2 col-md-2 col-sm-2"></th>
+				               
+				            </tr>
+				        </thead>
+				        <tbody>
+				            <tr ng-repeat="param in cardForm.cardParameters track by $index" ng-include="getTemplate(param)">
+				               
+				            </tr>
+				            
+				        </tbody>
+				    </table>
+				</div>
+			</div>	  
+		                            <div class="form-group col-md-12" align="right">
+		                                  <button type="submit"   class="btn btn-primary"  ng-click="addParameterRow()" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>       
+	             					</div>
+					    </div>	
+
+                        <div class="form-group col-md-12" align="right">
+                            <button type="button" class="btn btn-link"  ng-click="goBack('xcard')">{{'igas.lang.btn.back'|translate}}</button>
+                           <button type="submit" class="btn btn-primary"    ng-click="saveCard(cardForm)" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;{{'igas.lang.btn.submit'|translate}}</button>
+                       </div>
+                       
+                      
+                    </form>
+
+
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+        <!-- /.panel -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- /.row -->
+
+
